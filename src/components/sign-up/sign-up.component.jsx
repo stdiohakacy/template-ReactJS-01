@@ -19,13 +19,16 @@ class SignUp extends Component {
     handleSubmit = async e => {
         e.preventDefault()
         const { displayName, email, password, confirmPassword } = this.state
-
         if (password !== confirmPassword)
             return
 
         try {
-            const user = await auth.createUserWithEmailAndPassword(email, password)
-            createUserProfileDocument(user, { displayName })
+            const { user } = await auth.createUserWithEmailAndPassword(
+                email,
+                password
+            )
+
+            await createUserProfileDocument(user, { displayName })
 
             this.setState({
                 displayName: '',
@@ -53,44 +56,39 @@ class SignUp extends Component {
                     <FormInput
                         type='text'
                         name='displayName'
-                        label='Display Name'
                         value={displayName}
                         onChange={this.handleChange}
+                        label='Display Name'
                         required
                     />
-
                     <FormInput
                         type='email'
                         name='email'
-                        label='Email'
                         value={email}
                         onChange={this.handleChange}
+                        label='Email'
                         required
                     />
-
                     <FormInput
                         type='password'
                         name='password'
-                        label='Password'
                         value={password}
                         onChange={this.handleChange}
+                        label='Password'
                         required
                     />
-
                     <FormInput
                         type='password'
-                        name='password'
-                        label='Confirm Password'
+                        name='confirmPassword'
                         value={confirmPassword}
                         onChange={this.handleChange}
+                        label='Confirm Password'
                         required
                     />
-
-                    <CustomButton type='submit'>Sign up</CustomButton>
+                    <CustomButton type='submit'>SIGN UP</CustomButton>
                 </form>
             </div>
         )
     }
 }
-
 export default SignUp
