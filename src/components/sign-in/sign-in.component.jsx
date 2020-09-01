@@ -16,9 +16,7 @@ class SignIn extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        // this.setState({ email: '', password: '' })
-        console.log(this.state.email);
-        console.log(this.state.password);
+        this.setState({ email: '', password: '' })
     }
 
     handleChange = e => {
@@ -50,12 +48,15 @@ class SignIn extends Component {
                         label='password'
                         required
                     />
-                    <CustomButton type='submit'>Sign in</CustomButton>
-                    <CustomButton onClick={signInWithGoogle}>
-                        {' '}
+                    <div className='buttons'>
+                        <CustomButton type='submit'>Sign in</CustomButton>
+                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                            {' '}
                         Sign with Google
                         {' '}
-                    </CustomButton>
+                        </CustomButton>
+                    </div>
+
                 </form>
             </div>
         )
