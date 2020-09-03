@@ -2,7 +2,8 @@
     "name": "crwn-clothing",
     "version": "0.1.0",
     "engines": {
-        "node": "12.11.1"
+        "node": "6.9.1",
+        "npm": "3.10.8"
     },
     "proxy": "http://localhost:5000",
     "private": true,
@@ -29,9 +30,11 @@
         "babel-jest": "24.7.1"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "node server.js",
+        "postinstall": "npm run build",
+        "dev": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
