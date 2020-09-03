@@ -1,6 +1,9 @@
 {
     "name": "crwn-clothing",
     "version": "0.1.0",
+    "engines": {
+        "node": "12.11.1"
+    },
     "proxy": "http://localhost:5000",
     "private": true,
     "dependencies": {
@@ -20,10 +23,6 @@
         "styled-components": "4.2.0"
     },
     "devDependencies": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
         "react-scripts": "3.0.0"
     },
     "resolutions": {
