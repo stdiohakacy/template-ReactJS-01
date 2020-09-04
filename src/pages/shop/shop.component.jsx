@@ -5,6 +5,7 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 import CollectionPage from '../collection/collection.component'
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils'
 import { updateCollections } from '../../redux/shop/shop.actions'
+import { connect } from 'react-redux'
 class ShopPage extends Component {
     unsubscribeFromSnapshot = null
 
